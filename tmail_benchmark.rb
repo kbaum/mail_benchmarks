@@ -1,8 +1,8 @@
+#!/usr/bin/env ruby
+
 require "rubygems"
 require "bundler"
-Bundler.setup
-
-require 'tmail'
+Bundler.require
 require 'benchmark'
 
 

@@ -9,6 +9,7 @@ GEM
       treetop (>= 1.4.5)
     mime-types (1.16)
     polyglot (0.3.1)
+    tmail (1.2.7.1)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
 
@@ -19,3 +20,4 @@ PLATFORMS
 DEPENDENCIES
   i18n
   mail
+  tmail

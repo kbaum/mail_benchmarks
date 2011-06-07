@@ -1,10 +1,8 @@
+#!/usr/bin/env ruby
 require "rubygems"
 require "bundler"
-Bundler.setup
-
-require 'mail'
 require 'benchmark'
-
+Bundler.require
 
 sample_email = File.read('sample_body.eml')
 b = Benchmark.measure do
