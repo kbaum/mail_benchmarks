@@ -1,0 +1,91 @@
+Delivered-To: karl.baum@gmail.com
+Received: by 10.220.160.134 with SMTP id n6cs123885vcx;
+        Tue, 3 Aug 2010 05:26:01 -0700 (PDT)
+Return-Path: <webrat+bncCKP297efEBDRleDiBBoE5IuDvw@googlegroups.com>
+Received-SPF: pass (google.com: domain of webrat+bncCKP297efEBDRleDiBBoE5IuDvw@googlegroups.com designates 10.90.113.18 as permitted sender) client-ip=10.90.113.18;
+Authentication-Results: mr.google.com; spf=pass (google.com: domain of webrat+bncCKP297efEBDRleDiBBoE5IuDvw@googlegroups.com designates 10.90.113.18 as permitted sender) smtp.mail=webrat+bncCKP297efEBDRleDiBBoE5IuDvw@googlegroups.com; dkim=pass header.i=webrat+bncCKP297efEBDRleDiBBoE5IuDvw@googlegroups.com
+Received: from mr.google.com ([10.90.113.18])
+        by 10.90.113.18 with SMTP id l18mr7866231agc.28.1280838359850 (num_hops = 1);
+        Tue, 03 Aug 2010 05:25:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=beta;
+        h=domainkey-signature:received:x-beenthere:received:received
+         :mime-version:received:received:date:x-ip:user-agent:x-http-via
+         :x-http-useragent:message-id:subject:from:to:x-original-sender
+         :reply-to:precedence:mailing-list:list-id:list-post:list-help
+         :list-archive:sender:list-subscribe:list-unsubscribe:content-type;
+        bh=o1YqeFDS/nVJjROzlDp9SMECKgvhY0xo7AgiIYY8hQA=;
+        b=V4RwtZ6drFvxleKue1dBt6yF2znpXZDpNzOkVOdKs2CQXEFHyIf8zdKzleO04BUcHH
+         kh3ZpGTbsPFUq5keZT9RmDN80v2+daP2e2a5k6SZoAT4xWfNqoP9Eq7jLbSmA4BTMVaU
+         JqsdB1yMfp91FkjUJI/3A3VvGmN4NmmUosyjQ=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=googlegroups.com; s=beta;
+        h=x-beenthere:mime-version:date:x-ip:user-agent:x-http-via
+         :x-http-useragent:message-id:subject:from:to:x-original-sender
+         :reply-to:precedence:mailing-list:list-id:list-post:list-help
+         :list-archive:sender:list-subscribe:list-unsubscribe:content-type;
+        b=KrSYze4REtfQC+UO0qpbQ3BIRw6r0fDoMJv6gZT1Fs+PH9xZ5TmpVY3LauXgS99jtF
+         5x+pUEzssEAaX3RS7cqr83XEFnOQawLLGYMG2l6ktG64uZXisBU2KU+xkYCRwG0ZNvk0
+         yJj0oG+ZGHNeGtSb2eXBRSc6gqpohNpycsl1k=
+Received: by 10.90.113.18 with SMTP id l18mr1499818agc.28.1280838353927;
+        Tue, 03 Aug 2010 05:25:53 -0700 (PDT)
+X-BeenThere: webrat@googlegroups.com
+Received: by 10.150.69.26 with SMTP id r26ls46058yba.5.p; Tue, 03 Aug 2010 
+	05:25:53 -0700 (PDT)
+Received: by 10.151.42.18 with SMTP id u18mr4590666ybj.5.1280838353543;
+        Tue, 03 Aug 2010 05:25:53 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.101.151.9 with SMTP id d9mr894814ano.12.1280834029457; Tue, 03 
+	Aug 2010 04:13:49 -0700 (PDT)
+Received: by f42g2000yqn.googlegroups.com with HTTP; Tue, 3 Aug 2010 04:13:49 
+	-0700 (PDT)
+Date: Tue, 3 Aug 2010 04:13:49 -0700 (PDT)
+X-IP: 132.185.144.120
+User-Agent: G2/1.0
+X-HTTP-Via: 1.1 webgw0-rth.mh.bbc.co.uk:80 (squid/2.7.STABLE6), 1.0 internal
+X-HTTP-UserAgent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-US) 
+	AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4,gzip(gfe)
+Message-ID: <051d3244-d014-426d-a93d-fd2e10a9deeb@f42g2000yqn.googlegroups.com>
+Subject: [webrat] webrat, mechanize and http proxies
+From: Chris Lowis <chris.lowis@gmail.com>
+To: webrat <webrat@googlegroups.com>
+X-Original-Sender: chris.lowis@gmail.com
+Reply-To: webrat@googlegroups.com
+Precedence: list
+Mailing-list: list webrat@googlegroups.com; contact webrat+owners@googlegroups.com
+List-ID: <webrat.googlegroups.com>
+List-Post: <http://groups.google.com/group/webrat/post?hl=en_US>, 
+	<mailto:webrat@googlegroups.com>
+List-Help: <http://groups.google.com/support/?hl=en_US>, <mailto:webrat+help@googlegroups.com>
+List-Archive: <http://groups.google.com/group/webrat?hl=en_US>
+Sender: webrat@googlegroups.com
+List-Subscribe: <http://groups.google.com/group/webrat/subscribe?hl=en_US>, 
+	<mailto:webrat+subscribe@googlegroups.com>
+List-Unsubscribe: <http://groups.google.com/group/webrat/subscribe?hl=en_US>, 
+	<mailto:webrat+unsubscribe@googlegroups.com>
+Content-Type: text/plain; charset=ISO-8859-1
+
+In a previous version of Webrat (I'm now using 0.7.1), using Webrat
+with Cucumber, I used to be able to set the HTTP Proxy that mechanize
+uses like so:
+    webrat.adaptor.mechanize.set_proxy(nil, nil)
+
+Now I get
+   NoMethodError Exception: undefined method `adaptor' for
+#<Webrat::Session:0x1a4c940>
+
+Has the interface changed? I can still see an accessor for @adaptor in
+   http://github.com/brynary/webrat/blob/master/lib/webrat/core/session.rb
+
+but for some reason, this doesn't work anymore. Any ideas?
+
+Cheers,
+
+Chris
+
+-- 
+You received this message because you are subscribed to the Google Groups "webrat" group.
+To post to this group, send email to webrat@googlegroups.com.
+To unsubscribe from this group, send email to webrat+unsubscribe@googlegroups.com.
+For more options, visit this group at http://groups.google.com/group/webrat?hl=en.
+
