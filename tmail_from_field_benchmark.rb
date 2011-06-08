@@ -10,5 +10,6 @@ profile_result = RubyProf.profile do
 end
 
 puts "output rubyprof"
-printer = RubyProf::GraphHtmlPrinter.new(profile_result)
-printer.print(File.new('./docs/tmail_from_field_graph.html', "w+"), :min_percent=>0)
+#printer = RubyProf::GraphHtmlPrinter.new(profile_result)
+printer = RubyProf::GraphPrinter.new(profile_result)
+printer.print(File.new('./docs/tmail_from_field_graph.txt', "w+"), :min_percent=>0)
