@@ -3,16 +3,15 @@
 require "rubygems"
 require "bundler"
 Bundler.require
-require 'benchmark'
 
 
 sample_email = File.read('sample_body.eml')
-b = Benchmark.measure do
+profile_result = RubyProf.profile do
   1000.times do
     m = TMail::Mail.parse(sample_email)
   end
 end
 
-
-puts b.inspect
-
+puts "output rubyprof"
+printer = RubyProf::GraphHtmlPrinter.new(profile_result)
+printer.print(File.new('./docs/tmail_graph.html', "w+"), :min_percent=>0)
